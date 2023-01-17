@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name:home
+Template Name:homes
 */
 ?>
 
