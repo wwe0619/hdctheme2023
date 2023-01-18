@@ -21,6 +21,7 @@
                 <div class="hamburger-menu">
          <input type="checkbox" id="menu-btn-check">
          <label for="menu-btn-check" class="menu-btn"><span></span><br>menu</label>
+
          <!--ここからメニュー-->
         <div class="menu-content">
             <ul>
@@ -38,11 +39,22 @@
                 <li><a href="form">届出フォーム</a></li>
             </ul>
         </div>
+</div>
         <!--ここまでメニュー-->
 
          <div class="adult-btn">
          <p>高校生・大人は<br><span>こちら</span></p>
         </div>
+
+		 <div class="infoleftpc">
+		 	<button>
+			 <img src="http://localhost:8888/wordpress/wp-content/uploads/2023/01/phone.png">
+				<div class="telpc">082-298-1230<span class="infoicon"><br>受付時間　平日10時〜19時</span></div>
+			</button>
+		 </div>
+			<div class="inforightpc">
+				<button>無料体験<br>レッスン申込</button>
+			</div>
 
 </header>
 <!-- Navigation -->

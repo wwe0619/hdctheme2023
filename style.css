@@ -42,6 +42,221 @@ section p{
   margin: 0 auto;
 }
 
+.pagetitle {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 1em;
+  font-size: clamp(32px, 4vw, 60px);
+  font-family: 'Noto Sans', sans-serif;
+}
+header {
+	margin: 0;
+	padding: 0;
+	height: 60px;
+	background-color: #fff;
+	width: 100%;
+	position: fixed;
+	z-index: 100;
+	top:0;
+}
+
+.logo{
+    position: fixed;
+    top: 10px;
+    left: 20px;
+}
+.logo img{
+	width: 100px;
+}
+
+
+/* menu */
+.menu-btn {
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    display: flex;
+    height: 60px;
+    width: 60px;
+    justify-content: center;
+    align-items: center;
+    z-index: 90;
+    background-color: #969696;
+}
+.menu-btn span,
+.menu-btn span:before,
+.menu-btn span:after {
+    content: '';
+    display: block;
+    height: 1.5px;
+    width: 30px;
+    border-radius: 2px;
+    background-color: #efefec;
+    position: absolute;
+    bottom:35px;
+}
+.menu-btn{
+  font-size: 15px;
+    color: #efefec; 
+}
+
+.menu-btn span:before {
+    bottom: 8px;
+}
+.menu-btn span:after {
+    top: 8px;
+}
+#menu-btn-check:checked ~ .menu-btn span {
+    background-color: rgba(255, 255, 255, 0);/*メニューオープン時は真ん中の線を透明にする*/
+}
+#menu-btn-check:checked ~ .menu-btn span::before {
+    bottom: 0;
+    transform: rotate(45deg);
+}
+#menu-btn-check:checked ~ .menu-btn span::after {
+    top: 0;
+    transform: rotate(-45deg);
+}
+#menu-btn-check {
+    display: none;
+}
+.menu-content {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 100%;/*leftの値を変更してメニューを画面外へ*/
+    z-index: 80;
+    background-color: #969696;
+    transition: all 0.5s;/*アニメーション設定*/
+}
+#menu-btn-check:checked ~ .menu-content {
+    left: 0;/*メニューを画面内へ*/
+}
+
+.menu-content ul{
+    margin: 10% auto;
+    }
+
+.menu-content li{
+	list-style: none;
+	text-align: center;
+	margin: 10px;
+}
+
+.menu-content li a{
+	color: #fff;
+	text-decoration: none;
+  font-size: clamp(16px, 4vw, 24px);
+}
+.menu-logo{
+margin: 0 auto;
+text-align: center;
+}
+.menu-logo img{
+	text-align: center;
+	width: 150px;
+}
+
+/* 高校生・大人はこちら */
+.adult-btn {
+    position: fixed;
+    top: 0px;
+    right: 60px;
+    height: 60px;
+    width: 150px;
+    z-index: 90;
+    background-color: #a8a8a8;
+    color: #efefec;
+}
+
+.adult-btn p{
+  font-size: 16px;
+  text-align: center;
+  padding:5px;
+}
+
+.adult-btn span{
+  font-size: 12px;
+}
+
+@media(max-width: 680px) {
+  .inforightpc{
+		display: none;
+	}
+}
+
+@media(max-width: 680px) {
+  .infoleftpc{
+		display: none;
+	}
+}
+
+.inforightpc {
+  position: fixed;
+  top: 0px;
+  right: 210px;
+  height: 60px;
+  width: 120px;
+  z-index: 90;
+}
+
+.inforightpc button{
+  color:#ee7a62;
+  border: solid;
+  border-width:thin;
+  background-color:#fafafa;
+  cursor: pointer;
+  outline: none;
+  padding: 5px 0;
+  width:100%;
+  font-size: 16px; 
+  font-weight:550;
+  letter-spacing: 1px;
+  line-height:1.505;
+}
+
+.infoleftpc {
+  position: fixed;
+  top: 0px;
+  right: 330px;
+  height: 60px;
+  width: 160px;
+  z-index: 90;
+}
+
+.infoleftpc button{
+  display:flex;
+  color:#fff;
+  border: solid;
+  border-width:inherit;
+  background-color:#ee7a62;
+  cursor: pointer;
+  outline: none;
+  padding: 0;
+  width: 100%;
+  font-weight: bold;
+  align-items: center;
+  justify-content: center;
+}
+
+.infoleftpc button img{
+  width:12px;
+  padding:0 5px 0 0px;
+}
+
+.telpc{
+  font-size:20px;
+  line-height:0.8;
+  margin: 14px 0 14px 0;
+  letter-spacing: 0.5px;
+  font-weight:550;
+}
+
+.main{
+	margin-top: 0px;
+}
+
 .toppic img{
   width: 100%;
 }
@@ -579,7 +794,7 @@ tr:last-child td{
   bottom: 0;
 }
 
-@media(min-width: 481px) {
+@media(min-width: 681px) {
 	.column {
 		display: none;
 	}
@@ -601,11 +816,12 @@ tr:last-child td{
   width: 100%;
   font-weight: bold;
   align-items: center;
+  justify-content: center;
 }
 
 .infoleft button img{
   width:20px;
-  padding:5px 10px 5px 30px;
+  padding:5px 10px 5px 0px;
 }
 
 .tel{
@@ -644,328 +860,6 @@ tr:last-child td{
   vertical-align:top;
 }
 
-.pagetitle {
-  position: relative;
-  display: inline-block;
-  margin-bottom: 1em;
-  font-size: clamp(32px, 4vw, 60px);
-  font-family: 'Noto Sans', sans-serif;
-}
-header {
-	margin: 0;
-	padding: 0;
-	height: 60px;
-	background-color: #fff;
-	width: 100%;
-	position: fixed;
-	z-index: 100;
-	top:0;
-}
-
-.logo{
-    position: fixed;
-    top: 10px;
-    left: 20px;
-}
-.logo img{
-	width: 100px;
-}
-
-
-/* menu */
-.menu-btn {
-    position: fixed;
-    top: 0px;
-    right: 0px;
-    display: flex;
-    height: 60px;
-    width: 60px;
-    justify-content: center;
-    align-items: center;
-    z-index: 90;
-    background-color: #969696;
-}
-.menu-btn span,
-.menu-btn span:before,
-.menu-btn span:after {
-    content: '';
-    display: block;
-    height: 1.5px;
-    width: 30px;
-    border-radius: 2px;
-    background-color: #efefec;
-    position: absolute;
-    bottom:35px;
-}
-.menu-btn{
-  font-size: 15px;
-    color: #efefec; 
-}
-
-.menu-btn span:before {
-    bottom: 8px;
-}
-.menu-btn span:after {
-    top: 8px;
-}
-#menu-btn-check:checked ~ .menu-btn span {
-    background-color: rgba(255, 255, 255, 0);/*メニューオープン時は真ん中の線を透明にする*/
-}
-#menu-btn-check:checked ~ .menu-btn span::before {
-    bottom: 0;
-    transform: rotate(45deg);
-}
-#menu-btn-check:checked ~ .menu-btn span::after {
-    top: 0;
-    transform: rotate(-45deg);
-}
-#menu-btn-check {
-    display: none;
-}
-.menu-content {
-    width: 100%;
-    height: 100%;
-    position: fixed;
-    top: 0;
-    left: 100%;/*leftの値を変更してメニューを画面外へ*/
-    z-index: 80;
-    background-color: #969696;
-    transition: all 0.5s;/*アニメーション設定*/
-}
-#menu-btn-check:checked ~ .menu-content {
-    left: 0;/*メニューを画面内へ*/
-}
-
-.menu-content ul{
-    margin: 10% auto;
-    }
-
-.menu-content li{
-	list-style: none;
-	text-align: center;
-	margin: 10px;
-}
-
-.menu-content li a{
-	color: #fff;
-	text-decoration: none;
-  font-size: clamp(16px, 4vw, 24px);
-}
-.menu-logo{
-margin: 0 auto;
-text-align: center;
-}
-.menu-logo img{
-	text-align: center;
-	width: 150px;
-}
-
-/* 高校生・大人はこちら */
-.adult-btn {
-    position: fixed;
-    top: 0px;
-    right: 60px;
-    height: 60px;
-    width: 150px;
-    z-index: 90;
-    background-color: #a8a8a8;
-    color: #efefec;
-}
-
-.adult-btn p{
-  font-size: 16px;
-  text-align: center;
-  padding:5px;
-}
-
-.adult-btn span{
-  font-size: 12px;
-}
-
-.main{
-	margin-top: 0px;
-}
-
-/* imgmenu */
-/*
-.example {
-  position: relative;
-  }
-
-.example p {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -ms-transform: translate(-50%,-50%);
-  -webkit-transform: translate(-50%,-50%);
-  transform: translate(-50%,-50%);
-  margin:0;
-  padding:0;
-  font-size: clamp(16px, 1.6vw, 24px);
-  /*文字の装飾は省略*/
-/*  }
-
-.example02 {
-  margin:0;
-  padding:0;
-  }
-
-.example02 p {
-  margin:0px auto;
-  padding:15px;
-  background-color: #fff;
-  text-align: left;
-  font-size: clamp(16px, 1.6vw, 24px);  
-  /*文字の装飾は省略*/
-  /*
-  line-height:150%;
-  }
-  
-.number{
-font-size: clamp(34px, 2vw, 40px);
-font-weight: bold;
-}
-
-
-.example img {
-  width: 100%;
-  }
-  
-/*works段組*/
-/*
-.worksCols {
-	display: flex;
-	flex-flow: row wrap;
-	justify-content: center;
-	margin: 5px auto;
-}
-
-.worksCol {
-	flex: 1;
-	margin: 2px;
-	padding: 0px;
-	&:first-child { margin-left: 0; }
-	&:last-child { margin-right: 0; }
-}
-*/
-/*段組3列*/
-/*
-.threeCols {
-	display: flex;
-	flex-flow: row wrap;
-	justify-content: center;
-	margin: 50px auto;
-}
-
-.threeCol {
-	flex: 1;
-	margin: 2px;
-	padding: 0px;
-	&:first-child { margin-left: 0; }
-	&:last-child { margin-right: 0; }	
-}
-
-.komidashi{
-	margin: 5px 20px;
-    font-size: clamp(16px, 2vw, 18px);
-}
-.sub{
-    font-size: clamp(12px, 1vw, 14px);
-}
-
-.package{	
-    font-size: clamp(24px, 3vw, 32px);
-    text-align: right;
-    margin-top: 20px !important;
-}
-
-.threeCol p{
-	margin: 5px 20px;
-	border-bottom: dashed 1px #000;
-}
-.l-text{
-	float: left;
-}
-.r-text{
-	float: right;
-}
-
-/*段組*/
-/*
-.topCols {
-	display: flex;
-	flex-flow: row wrap;
-	justify-content: center;
-	margin: 5px auto;
-}
-
-.topCol {
-	flex: 1;
-	margin: 10px !important;
-	padding: 0px;
-	flex-basis: 40%;
-	margin: 0 0 5px 0;
-	box-shadow: 10px 0px 10px -10px rgba(3, 0, 0, .2), -10px 0px 10px -10px rgba(3, 0, 0, .2);
-	&:first-child { margin-left: 0; }
-	&:last-child { margin-right: 0; }
-	
-}
-.columns {
-	display: flex;
-	flex-flow: row wrap;
-	justify-content: center;
-	margin: 5px auto;
-}
-
-.column {
-	flex: 1;
-	border: 1px solid gray;
-	margin: 10px;
-	padding: 10px;
-	&:first-child { margin-left: 0; }
-	&:last-child { margin-right: 0; }
-	
-}
-
-.bgtitle {
-  position: relative;
-  display: inline-block;
-  margin-bottom: 1em;
-  padding-left: 20px;
-  font-size: clamp(32px, 4vw, 60px);
-}
-
-.bg01{
-	width: 100%;
-	margin-top: 150px;
-	padding: 0;
-	background-color: #292E33;
-	color: #fff;
-	max-width: 100%;
-}
-.bg01title{
-  text-align:left;
-  margin: 0px auto;
-  padding-top: 50px;
-  max-width: 980px;
-}
-
-.bg02{
-	width: 100%;
-	margin: 0;
-	padding: 0;
-	background-color: #DDDDDD;
-	color: #000;
-	max-width: 100%;
-}
-.bg02title{
-  text-align:left;
-  margin: 0px auto;
-  padding-top: 50px;
-  padding-right: 20px;
-  max-width: 980px;
-}
-*/
 .footer-ex{
 	width: 100%;
 	margin-top: 150px;
@@ -1019,58 +913,3 @@ list-style: none;
 .footer-contact li{
   list-style: none;
   }
-
-/*
-@media screen and (max-width: 980px) {
-  .columns .column {
-		margin-bottom: 5px;
-    flex-basis: 40%;
-		&:nth-last-child(2) {
-			margin-right: 0;
-		}
-		&:last-child {
-			flex-basis: 100%;
-			margin: 0;
-		}
-	}
-	.worksCols .worksCol {
-		margin-bottom: 5px;
-    flex-basis: 40%;
-		&:nth-last-child(2) {
-			margin-right: 0;
-		}
-		&:last-child {
-			flex-basis: 100%;
-			margin: 0;
-		}
-	}
-}
-/*
-@media screen and (max-width: 680px) {
-	.example p {
-	  font-size: clamp(32px, 4vw, 48px);
-	  /*文字の装飾は省略*/
-    /*  line-height:80%;
-	  }
-	
-	.hosoku{
-	  font-size: clamp(16px, 4vw, 24px);
-	  /*文字の装飾は省略*/
-	  /*}
-	  
-	.columns .column {
-		flex-basis: 100%;
-		margin: 0 10px 10px 10px;
-	}
-	.worksCols .worksCol {
-		flex-basis: 100%;
-		margin: 0 10px 10px 10px;
-	}
-	.threeCols .threeCol {
-		flex-basis: 100%;
-		margin: 0 10px 10px 10px;
-	}
-}
-*/
-
-
