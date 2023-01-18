@@ -6,6 +6,6 @@
 	<?php the_content(); ?>
 <?php endwhile; ?>	
 </section>	
-test
+test01
 <?php get_footer(); ?>
 
