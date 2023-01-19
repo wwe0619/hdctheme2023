@@ -2,7 +2,7 @@
 Theme Name: plane
 Author: JAZY branding
 */
-
+@import url("sub.css");
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300&family=Zen+Kaku+Gothic+New:wght@300&display=swap');
 
 @charset "UTF-8";
